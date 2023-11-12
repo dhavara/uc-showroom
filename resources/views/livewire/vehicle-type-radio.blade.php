@@ -25,7 +25,7 @@
         <label for="trunk_area" class="block text-sm font-medium leading-6 text-gray-900 required">Trunk Area</label>
         <div class="mt-2">
           <input class="border w-full py-1.5 px-3 rounded-md" type="text" pattern="\d*" name="trunk_area"
-            id="trunk_area" maxlength="2" autocomplete="off" placeholder="e.g. 2" wire:model="trunkArea"
+            id="trunk_area" maxlength="2"  placeholder="e.g. 2" wire:model="trunkArea"
             @if ($vehicle != null) value="{{ old('trunk_area', $vehicle->motorcycle->trunk_area) }}" @endif
             required />
           <p class="text-sm text-gray-400 mt-2">Input only number within 2 digit number</p>
@@ -36,7 +36,7 @@
           Capacity</label>
         <div class="mt-2">
           <input class="border w-full py-1.5 px-3 rounded-md" type="text" pattern="\d*" maxlength="4"
-            name="fuel_capacity" id="fuel_capacity" autocomplete="off" placeholder="e.g. 15"
+            name="fuel_capacity" id="fuel_capacity"  placeholder="e.g. 15"
             wire:model="fuelCapacity"
             @if ($vehicle != null) value="{{ old('fuel_capacity', $vehicle->motorcycle->fuel_capacity) }}" @endif
             required />
@@ -48,7 +48,7 @@
         <label for="total_wheel" class="block text-sm font-medium leading-6 text-gray-900 required">Total Wheel</label>
         <div class="mt-2">
           <input class="border w-full py-1.5 px-3 rounded-md" type="text" pattern="\d*" name="total_wheel"
-            id="total_wheel" maxlength="2" autocomplete="off" placeholder="e.g. 8"
+            id="total_wheel" maxlength="2"  placeholder="e.g. 8"
             @if ($vehicle != null) value="{{ old('total_wheel', $vehicle->truck->total_wheel) }}" @endif
             required />
           <p class="text-sm text-gray-400 mt-2">Input only number within 2 digit number</p>
@@ -58,7 +58,7 @@
         <label for="cargo_area" class="block text-sm font-medium leading-6 text-gray-900 required">Cargo Area</label>
         <div class="mt-2">
           <input class="border w-full py-1.5 px-3 rounded-md" type="number" name="cargo_area" id="cargo_area"
-            maxlength="3" autocomplete="off" placeholder="e.g. 15"
+            maxlength="3"  placeholder="e.g. 15"
             @if ($vehicle != null) value="{{ old('cargo_area', $vehicle->truck->cargo_area) }}" @endif
             required />
           <p class="text-sm text-gray-400 mt-2">Input only number within 3 digit number</p>
@@ -69,7 +69,7 @@
         <label for="fuel_type" class="block text-sm font-medium leading-6 text-gray-900 required">Fuel Type</label>
         <div class="mt-2">
           <input class="border w-full py-1.5 px-3 rounded-md" type="text" name="fuel_type" id="fuel_type"
-            autocomplete="off" placeholder="e.g. Gas"
+             placeholder="e.g. Gas"
             @if ($vehicle != null) value="{{ old('fuel_type', $vehicle->car->fuel_type) }}" @endif
             required />
         </div>
@@ -78,7 +78,7 @@
         <label for="trunk_area" class="block text-sm font-medium leading-6 text-gray-900 required">Trunk Area</label>
         <div class="mt-2">
           <input class="border w-full py-1.5 px-3 rounded-md" type="text" pattern="\d*" name="trunk_area"
-            id="trunk_area" maxlength="2" autocomplete="off" placeholder="e.g. 15"
+            id="trunk_area" maxlength="2"  placeholder="e.g. 15"
             @if ($vehicle != null) value="{{ old('trunk_area', $vehicle->car->trunk_area) }}" @endif
             required />
           <p class="text-sm text-gray-400 mt-2">Input only number within 2 digit</p>
