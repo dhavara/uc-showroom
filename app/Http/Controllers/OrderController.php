@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
-use App\Http\Requests\StoreOrderRequest;
-use App\Http\Requests\UpdateOrderRequest;
+use App\Models\User;
+use App\Models\Vehicle;
+use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
@@ -13,7 +14,12 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        return view('orders.index', [
+            'orders' => Order::with('user', 'vehicles')->get(),
+            'price' => Order::with('vehicles')->get()->map(function ($order) {
+                return $order->vehicles->sum('price');
+            })
+        ]);
     }
 
     /**
@@ -21,13 +27,16 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        return view('orders.create', [
+            'customers' => User::all(),
+            'vehicles' => Vehicle::with('type')->get()
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreOrderRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -43,15 +52,18 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Order $order)
+    public function edit($id)
     {
-        //
+        return view('orders.update', [
+            'order' => Order::find($id),
+            'vehicles' => Vehicle::with('type')->get()
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateOrderRequest $request, Order $order)
+    public function update(Request $request, Order $order)
     {
         //
     }
@@ -59,8 +71,14 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Order $order)
+    public function destroy($id)
     {
-        //
+        $order = Order::find($id);
+        $order->vehicles()->detach();
+        $order->delete();
+
+        return redirect()
+            ->route('orders.index')
+            ->with('success', 'Order deleted successfully.');
     }
 }
