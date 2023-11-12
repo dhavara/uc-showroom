@@ -54,7 +54,7 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        return view('orders.update', [
+        return view('orders.edit', [
             'order' => Order::find($id),
             'vehicles' => Vehicle::with('type')->get()
         ]);

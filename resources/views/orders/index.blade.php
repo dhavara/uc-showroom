@@ -20,7 +20,6 @@
             <td class="py-4">Rp. {{ number_format($price[$loop->index], 0, '.', ',') }}</td>
             <td class="py-4">
                 <div class="d-grid gap-2 d-md-block">
-                    <a class="btn btn-primary" href="{{ route('orders.edit', $order->id) }}">Edit</a>
                     <form action="{{ route('orders.destroy', $order->id) }}" method="POST">
                         @method('DELETE')
                         @csrf

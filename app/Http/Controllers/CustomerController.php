@@ -56,10 +56,10 @@ class CustomerController extends Controller {
      * Show the form for editing the specified resource.
      */
     public function edit($id) {
-        $customer = User::find($id)->get();
+        $customer = User::find($id);
 
         return view('customers.edit', [
-            'customers' => $customer
+            'customer' => $customer
         ]);
     }
 
