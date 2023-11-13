@@ -13,11 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
-            'id' => 250001,
-            'name' => 'Luam',
-            'address' => 'Kivotos',
-            'phone' => '081234567890',
-        ]);
+        
     }
 }

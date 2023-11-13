@@ -8,9 +8,9 @@ class VehicleTypeRadio extends Component {
     public $vehicle = null;
     public $vehicleType = '';
 
-    // motobike
+    // bike
     public $trunkArea = '';
-    public $engineCapacity = '';
+    public $fuelCapacity = '';
 
     // truck
     public $totalWheel = '';

@@ -14,7 +14,7 @@
     </div>
 
     <div class="form-outline mb-4">
-        <label for="capacity">Capacity</label>
+        <label for="capacity">Passenger</label>
         <input type="number" name="capacity" id="capacity" pattern="\d*" minlength="2" maxlength="2" class="form-control"  value="{{ old('capacity', $vehicle->capacity) }}"required/>
     </div>
 
