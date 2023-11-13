@@ -16,11 +16,11 @@
     <tbody>
         @foreach ($customers as $customer)
         <tr>
-            <th class="py-4">{{ $customer->id }}</th>
-            <td class="py-4">{{ $customer->name }}</td>
-            <td class="py-4">{{ $customer->address }}</td>
-            <td class="py-4">{{ $customer->phone }}</td>
-            <td class="py-4">
+            <th>{{ $customer->id }}</th>
+            <td>{{ $customer->name }}</td>
+            <td>{{ $customer->address }}</td>
+            <td>{{ $customer->phone }}</td>
+            <td>
                 <div class="d-grid gap-2 d-md-block">
                     <a class="btn btn-primary" href="{{ route('customers.edit', $customer->id) }}">Edit</a>
                     <form action="{{ route('customers.destroy', $customer->id) }}" method="POST">

@@ -20,13 +20,13 @@
         @foreach ($vehicles as $vehicle)
         <tr>
             <th class="py-4">{{ $vehicle->id }}</th>
-            <td class="py-4">{{ $vehicle->model }}</td>
-            <td class="py-4">{{ $vehicle->year }}</td>
-            <td class="py-4">{{ $vehicle->capacity }}</td>
-            <td class="py-4">{{ $vehicle->manufacture }}</td>
-            <td class="py-4">Rp. {{ number_format($vehicle->price, 0, '.', ',') }}</td>
-            <td class="py-4">{{ $vehicle->type }}</td>
-            <td class="py-4">
+            <td>{{ $vehicle->model }}</td>
+            <td>{{ $vehicle->year }}</td>
+            <td>{{ $vehicle->capacity }}</td>
+            <td>{{ $vehicle->manufacture }}</td>
+            <td>Rp. {{ number_format($vehicle->price, 0, '.', ',') }}</td>
+            <td>{{ $vehicle->type }}</td>
+            <td>
                 <div class="d-grid gap-2 d-md-block">
                     <a class="btn btn-primary" href="{{ route('vehicles.edit', $vehicle->id) }}">Edit</a>
                     <form action="{{ route('vehicles.destroy', $vehicle->id) }}" method="POST">
