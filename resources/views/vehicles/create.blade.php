@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('content')
+@if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-warning alert-dismissable custom-warning-box" style="margin: 15px;">{{ $error }}
+            </div>
+        @endforeach
+    @endif
 <form class="form-floating" action="{{ route('vehicles.store') }}" method="POST">
     @csrf
     <div class="form-outline mb-4">
@@ -9,12 +15,12 @@
 
     <div class="form-outline mb-4">
         <label for="year">Year</label>
-        <input type="number" name="year" id="year" pattern="\d*" minlength="4" maxlength="4" class="form-control"  required/>
+        <input type="number" name="year" id="year" minlength="4" maxlength="4" class="form-control"  required/>
     </div>
 
     <div class="form-outline mb-4">
         <label for="capacity">Passenger</label>
-        <input type="number" name="capacity" id="capacity" pattern="\d*" minlength="2" maxlength="2" class="form-control"  required/>
+        <input type="number" name="capacity" id="capacity" minlength="2" maxlength="2" class="form-control"  required/>
     </div>
 
     <div class="form-outline mb-4">

@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('content')
+@if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-warning alert-dismissable custom-warning-box" style="margin: 15px;">{{ $error }}
+            </div>
+        @endforeach
+    @endif
 <form class="form-floating" action="{{ route('vehicles.update', $vehicle->id) }}" method="POST">
     @method('PUT')
     @csrf

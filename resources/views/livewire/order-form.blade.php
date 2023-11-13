@@ -27,10 +27,10 @@
                   <button class="bg-blue-600 py-1.5 px-3 text-white font-semibold rounded"
                     wire:click="selectCustomer('{{ $customer->id }}')">Select</button>
                 </td>
-                <td class="py-4">{{ $customer->id }}</td>
-                <td class="py-4">{{ $customer->name }}</td>
-                <td class="py-4">{{ $customer->address }}</td>
-                <td class="py-4">{{ substr($customer->phone, 0, 4) }} -
+                <td>{{ $customer->id }}</td>
+                <td>{{ $customer->name }}</td>
+                <td>{{ $customer->address }}</td>
+                <td>{{ substr($customer->phone, 0, 4) }} -
                   {{ substr($customer->phone, 4, 4) }} - {{ substr($customer->phone, 8, 4) }}</td>
               </tr>
             @endforeach
@@ -63,12 +63,12 @@
                           wire:click="removeVehicle('{{ $vehicle->id }}')">Remove</button>
                       @endif
                     </td>
-                    <td class="py-4">{{ $vehicle->model }}</td>
-                    <td class="py-4">{{ $vehicle->year }}</td>
-                    <td class="py-4">{{ $vehicle->capacity }}</td>
-                    <td class="py-4">{{ $vehicle->manufacture }}</td>
-                    <td class="py-4">{{ $vehicle->type }}</td>
-                    <td class="py-4">Rp. {{ number_format($vehicle->price, 0, '.', ',') }}</td>
+                    <td>{{ $vehicle->model }}</td>
+                    <td>{{ $vehicle->year }}</td>
+                    <td>{{ $vehicle->capacity }}</td>
+                    <td>{{ $vehicle->manufacture }}</td>
+                    <td>{{ $vehicle->type }}</td>
+                    <td>Rp. {{ number_format($vehicle->price, 0, '.', ',') }}</td>
                   </tr>
                 @endforeach
               </tbody>
@@ -76,10 +76,10 @@
           </div>
           <div class="p-5 rounded-lg border-2">
             <p class="font-semibold text-xl mb-6">Order Summary</p>
-            <p>ID Card : {{ $selectedCustomer->id }}</p>
-            <p>Name : {{ $selectedCustomer->name }}</p>
-            <p>Address : {{ $selectedCustomer->address }}</p>
-            <p>Phone : {{ $selectedCustomer->phone }}</p>
+            <p>ID Card: {{ $selectedCustomer->id }}</p>
+            <p>Name: {{ $selectedCustomer->name }}</p>
+            <p>Address: {{ $selectedCustomer->address }}</p>
+            <p>Phone: {{ $selectedCustomer->phone }}</p>
             <hr class="my-8" />
             <div class="flex justify-between items-center">
               <p class="font-semibold">Total</p>
