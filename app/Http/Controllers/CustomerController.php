@@ -41,8 +41,7 @@ class CustomerController extends Controller {
         ]);
 
         return redirect()
-            ->route('customers.index')
-            ->with('success', 'Customer created successfully.');
+            ->route('customers.index');
     }
 
     /**
@@ -70,22 +69,19 @@ class CustomerController extends Controller {
         $customer = User::find($id);
 
         $request->validate([
-            'id' => ['required', 'unique:customers', 'max:16', 'min:16'],
             'name' => ['required', 'max:255'],
             'address' => ['required', 'max:255'],
             'phone' => ['required', 'max:15', 'min:9'],
         ]);
 
         $customer->update([
-            'id' => $request->id,
             'name' => $request->name,
             'address' => $request->address,
             'phone' => $request->phone
         ]);
 
         return redirect()
-            ->route('customers.index')
-            ->with('success', 'Customer updated successfully.');
+            ->route('customers.index');
     }
 
     /**
@@ -97,7 +93,6 @@ class CustomerController extends Controller {
         $customer->delete();
 
         return redirect()
-            ->route('customers.index')
-            ->with('success', 'Customer deleted successfully.');
+            ->route('customers.index');
     }
 }

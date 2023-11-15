@@ -16,7 +16,7 @@ return new class extends Migration {
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->float('trunk_area');
-            $table->float('engine_capacity');
+            $table->float('fuel_capacity');
             $table->timestamps();
         });
     }

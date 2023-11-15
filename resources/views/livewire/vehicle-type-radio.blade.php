@@ -4,8 +4,8 @@
       <label for="type" class="block text-sm font-medium leading-6 text-gray-900 required">Type</label>
       <div class="flex items-center justify-between mt-2">
         <div class="block">
-          <input type="radio" id="motorcycle" name="type" wire:click="setVehicleType('Motorcycle')" required>
-          <label for="motorcycle">Motorcycle</label>
+          <input type="radio" id="bike" name="type" wire:click="setVehicleType('Bike')" required>
+          <label for="bike">Bike</label>
         </div>
         <div class="block">
           <input type="radio" id="truck" name="type" wire:click="setVehicleType('Truck')" required>
@@ -26,7 +26,7 @@
         <div class="mt-2">
           <input class="border w-full py-1.5 px-3 rounded-md" type="text" pattern="\d*" name="trunk_area"
             id="trunk_area" maxlength="2"  placeholder="e.g. 2" wire:model="trunkArea"
-            @if ($vehicle != null) value="{{ old('trunk_area', $vehicle->motorcycle->trunk_area) }}" @endif
+            @if ($vehicle != null) value="{{ old('trunk_area', $vehicle->bike->trunk_area) }}" @endif
             required />
           <p class="text-sm text-gray-400 mt-2">Input only number within 2 digit number</p>
         </div>
@@ -38,7 +38,7 @@
           <input class="border w-full py-1.5 px-3 rounded-md" type="text" pattern="\d*" maxlength="4"
             name="fuel_capacity" id="fuel_capacity"  placeholder="e.g. 15"
             wire:model="fuelCapacity"
-            @if ($vehicle != null) value="{{ old('fuel_capacity', $vehicle->motorcycle->fuel_capacity) }}" @endif
+            @if ($vehicle != null) value="{{ old('fuel_capacity', $vehicle->bike->fuel_capacity) }}" @endif
             required />
           <p class="text-sm text-gray-400 mt-2">Input only number within 4 digit number</p>
         </div>

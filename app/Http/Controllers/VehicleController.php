@@ -66,7 +66,7 @@ class VehicleController extends Controller
             ]);
         }
 
-        return redirect()->route('vehicles.index')->with('success', 'Vehicle created successfully.');
+        return redirect()->route('vehicles.index');
     }
 
     /**
@@ -118,7 +118,7 @@ class VehicleController extends Controller
                 'trunk_area' => $request->input('trunk_area'),
             ]);
         } else if ($vehicle->type == 'Bike') {
-            $vehicle->motorcycle()->update([
+            $vehicle->bike()->update([
                 'trunk_area' => $request->input('trunk_area'),
                 'fuel_capacity' => $request->input('fuel_capacity'),
             ]);
@@ -129,7 +129,7 @@ class VehicleController extends Controller
             ]);
         }
 
-        return redirect()->route('vehicles.index')->with('success', 'Vehicle updated successfully.');
+        return redirect()->route('vehicles.index');
     }
 
     /**
@@ -142,7 +142,6 @@ class VehicleController extends Controller
         $vehicle->delete();
 
         return redirect()
-            ->route('vehicles.index')
-            ->with('success', 'Vehicle deleted successfully.');
+            ->route('vehicles.index');
     }
 }
