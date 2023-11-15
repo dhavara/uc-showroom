@@ -6,7 +6,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">ID</th>
+            <th scope="col">No</th>
             <th scope="col">Model</th>
             <th scope="col">Year</th>
             <th scope="col">Capacity</th>
@@ -19,7 +19,7 @@
     <tbody>
         @foreach ($vehicles as $vehicle)
         <tr>
-            <th class="py-4">{{ $vehicle->id }}</th>
+            <th>{{ $vehicle->id }}</th>
             <td>{{ $vehicle->model }}</td>
             <td>{{ $vehicle->year }}</td>
             <td>{{ $vehicle->capacity }}</td>
